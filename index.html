@@ -70,6 +70,16 @@
             color: #ff6347;
             margin-top: 5px;
         }
+        .error-message {
+            position: absolute;
+            bottom: 20px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -79,9 +89,9 @@
         <div class="section">
             <h2>Current Version</h2>
             <div class="button-grid">
-                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Beta-v5.0.1/index.html" class="current-version">PLAY</a>
+                <a href="#" class="current-version" id="playButton">PLAY</a>
             </div>
-            <div class="version-text">Beta v5.0.1 (Current)</div>
+            <div class="version-text">PreBeta v5.0 (Current)</div>
         </div>
         
         <div class="section">
@@ -101,5 +111,20 @@
             </div>
         </div>
     </div>
+    
+    <div class="error-message" id="errorMessage">Error: PreBeta v5.0 is currently unavailable.</div>
+    
+    <script>
+        const playButton = document.getElementById('playButton');
+        const errorMessage = document.getElementById('errorMessage');
+
+        playButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
+        });
+    </script>
 </body>
 </html>
