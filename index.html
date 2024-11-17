@@ -11,28 +11,32 @@
             background-color: #f9f9f9;
             color: #333;
             margin: 0;
-            padding: 0;
+            padding: 0 20px; /* Added padding to the sides */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            margin: 10px 0;
         }
         h1 {
             color: #007acc;
-            margin-bottom: 20px;
         }
         h2 {
             color: #555;
-            margin-top: 0;
         }
         .container {
             text-align: center;
         }
+        .section {
+            margin-bottom: 30px;
+        }
         .button-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
             justify-content: center;
         }
         .button-grid a {
@@ -49,35 +53,52 @@
         .button-grid a:hover {
             background-color: #007acc;
             color: #fff;
-            transform: scale(1.1);
+            transform: scale(1.2); /* Bigger hover effect */
         }
         .current-version {
             border: 2px solid #ff6347;
             color: #ff6347;
+            font-size: 24px;
+            padding: 20px 40px;
         }
         .current-version:hover {
             background-color: #ff6347;
             color: #fff;
+        }
+        .version-text {
+            font-size: 12px;
+            color: #ff6347;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Tower Defenders</h1>
-        <h2>Choose a Game Version</h2>
-        <div class="button-grid">
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Beta-v5.0.1/index.html" class="current-version">Beta v5.0.1 (Current)</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.0/index.html">Alpha v2.0</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.1/index.html">Alpha v2.1</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.3/index.html">Alpha v2.3</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.4/index.html">Alpha v2.4</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.5.1/index.html">Alpha v2.5.1</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.7.0/index.html">Alpha v2.7.0</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.7.2/index.html">Alpha v2.7.2</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.8.0/index.html">Alpha v2.8.0</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v4.0/index.html">Alpha v4.0</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v4.1.0/index.html">Alpha v4.1.0</a>
-            <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-PreBeta-v5.0/index.html">PreBeta v5.0</a>
+        
+        <div class="section">
+            <h2>Current Version</h2>
+            <div class="button-grid">
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Beta-v5.0.1/index.html" class="current-version">PLAY</a>
+            </div>
+            <div class="version-text">Beta v5.0.1 (Current)</div>
+        </div>
+        
+        <div class="section">
+            <h2>Historical Versions</h2>
+            <div class="button-grid">
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.0/index.html">Alpha v2.0</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.1/index.html">Alpha v2.1</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.3/index.html">Alpha v2.3</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.4/index.html">Alpha v2.4</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.5.1/index.html">Alpha v2.5.1</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.7.0/index.html">Alpha v2.7.0</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.7.2/index.html">Alpha v2.7.2</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v2.8.0/index.html">Alpha v2.8.0</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v4.0/index.html">Alpha v4.0</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-Alpha-v4.1.0/index.html">Alpha v4.1.0</a>
+                <a href="https://raw.githack.com/Tebby2008/TowerDefenders/TowerDefenders-PreBeta-v5.0/index.html">PreBeta v5.0</a>
+            </div>
         </div>
     </div>
 </body>
