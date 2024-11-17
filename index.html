@@ -17,6 +17,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            position: relative; /* Needed for absolute positioning of error messages */
         }
         h1, h2 {
             margin: 10px 0;
@@ -49,6 +50,7 @@
             padding: 10px 20px;
             transition: all 0.3s ease;
             transform-origin: center;
+            opacity: 0.8; /* More transparent */
         }
         .button-grid a:hover {
             background-color: #007acc;
@@ -74,13 +76,21 @@
         .error-message {
             position: absolute;
             bottom: 20px;
-            background-color: rgba(255, 0, 0, 0.6); /* Translucent red */
-            color: #ff0000; /* Darker red font */
+            width: 80%;
+            background-color: rgba(255, 0, 0, 0.3); /* More transparent red */
+            color: #990000; /* Darker red font */
             padding: 10px;
             border: 2px solid #990000; /* Darker red outline */
             border-radius: 5px;
             display: none;
-            transition: opacity 0.5s ease; /* Fast fade-in, slow fade-out */
+            opacity: 0;
+            transition: all 0.5s ease; /* Smooth fade */
+            transform: translateY(100%); /* Initial position off screen */
+        }
+        .error-message.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0); /* Pop out from bottom */
         }
     </style>
 </head>
@@ -114,21 +124,26 @@
         </div>
     </div>
     
-    <div class="error-message" id="errorMessage">Error: PreBeta v5.0 is currently unavailable.</div>
+    <div class="error-messages" id="errorMessages"></div>
     
     <script>
         const prebetaButton = document.getElementById('prebetaButton');
-        const errorMessage = document.getElementById('errorMessage');
+        const errorMessagesContainer = document.getElementById('errorMessages');
 
         prebetaButton.addEventListener('click', (e) => {
             e.preventDefault();
-            errorMessage.style.display = 'block';
-            errorMessage.style.opacity = '1';
+            
+            const errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'visible');
+            errorMessage.textContent = 'Error: PreBeta v5.0 is currently unavailable.';
+
+            errorMessagesContainer.appendChild(errorMessage);
+
             setTimeout(() => {
-                errorMessage.style.opacity = '0';
+                errorMessage.classList.remove('visible');
                 setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 500); // Ensure the display:none is set after fade-out
+                    errorMessage.remove();
+                }, 500); // Ensure the element is removed after the fade-out
             }, 2000); // Show message for 2 seconds before fading out
         });
     </script>
